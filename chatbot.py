@@ -46,6 +46,10 @@ while True:
     print("Chatbot: ", response)
     #TODO: Use the assistant role to give the chatbot conversation context
 	    #add the message content to the chat history
+    chat_history.append({
+	    "role": "assistant",
+	    "content": response
+    })
 	#*(now the loop starts over!)
   
   #TODO: Greet your user and ask for their name to personalize the conversation
