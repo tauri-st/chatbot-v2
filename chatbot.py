@@ -30,6 +30,7 @@ def greet_user(user_name):
         "role": "user",
         "content": user_name
     })
+    print(f"Chatbot: Thank you, {user_name}! Nice to meet you!")
 
 #TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #TODO: while the conversation is running:
