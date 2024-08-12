@@ -25,8 +25,12 @@ chat_history = []
 
 #TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #TODO: while the conversation is running:
+while True:
 #TODO: prompt the user for input
+    user_input = input("You: ")
 	#TODO: if the user types “exit”, stop the loop
+    if user_input.lower() == "exit":
+        break
 	#TODO: add the user’s input in the chat history
 	#TODO: make the API call
 	#TODO: extract the message content and display it to the user
