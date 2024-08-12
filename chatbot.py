@@ -23,6 +23,14 @@ model = "gpt-3.5-turbo"
 #TODO: create an array that will store the chat history
 chat_history = []
 
+#TODO: Greet your user and ask for their name to personalize the conversation
+def greet_user(user_name):
+    user_name = input("Hello! Let's chat! You can type `exit` to exit out anytime. What's your name? ")
+    chat_history.append({
+        "role": "user",
+        "content": user_name
+    })
+
 #TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #TODO: while the conversation is running:
 while True:
@@ -51,5 +59,3 @@ while True:
 	    "content": response
     })
 	#*(now the loop starts over!)
-  
-  #TODO: Greet your user and ask for their name to personalize the conversation
