@@ -21,6 +21,7 @@ def get_api_chat_response_message(model, messages):
 model = "gpt-3.5-turbo"
 
 #TODO: create an array that will store the chat history
+chat_history = []
 
 #TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #TODO: while the conversation is running:
