@@ -31,6 +31,11 @@ def greet_user(user_name):
         "content": user_name
     })
     response = get_api_chat_response_message(model, chat_history)
+    print("Chatbot: ", response)
+    chat_history.append({
+	    "role": "assistant",
+	    "content": response
+    })
 
 #TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #TODO: while the conversation is running:
