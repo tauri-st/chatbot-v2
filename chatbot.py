@@ -23,27 +23,17 @@ model = "gpt-3.5-turbo"
 #TODO: create an array that will store the chat history
 chat_history = []
 
-#TODO: Greet your user and ask for their name to personalize the conversation
-def greet_user():
-    user_name = input("Hello! Let's chat! You can type `exit` to exit out anytime. What's your name? ")
-    chat_history.append({
-        "role": "user",
-        "content": user_name
-    })
-    response = get_api_chat_response_message(model, chat_history)
-    print("Chatbot: ", response)
-    chat_history.append({
-	    "role": "assistant",
-	    "content": response
-    })
-
-greet_user()
+user_input = ""
 
 #TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #TODO: while the conversation is running:
 while True:
-#TODO: prompt the user for input
-    user_input = input("You: ")
+    #TODO: Greet your user and ask for their name
+    if (user_input == ""):
+        user_input = input("Hello! Let's chat! You can type `exit` to exit out anytime. What's your name? ")
+    #TODO: prompt the user for input
+    else:
+        user_input = input("You: ")
 	#TODO: if the user types “exit”, stop the loop
     if user_input.lower() == "exit":
         break
