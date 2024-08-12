@@ -37,6 +37,8 @@ def greet_user(user_name):
 	    "content": response
     })
 
+greet_user()
+
 #TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #TODO: while the conversation is running:
 while True:
