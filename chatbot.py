@@ -32,6 +32,13 @@ while True:
     if user_input.lower() == "exit":
         break
 	#TODO: add the user’s input in the chat history
+    #*Format it like the messages dictionary for a chat completions 
+    #*API call bc it's going to be sent as part of the call
+    chat_history.append({
+        "role": "user",
+        "content": user_input
+    })
+    
 	#TODO: make the API call
 	#TODO: extract the message content and display it to the user
     #TODO: Use the assistant role to give the chatbot conversation context
