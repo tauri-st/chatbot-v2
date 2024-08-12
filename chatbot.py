@@ -24,7 +24,7 @@ model = "gpt-3.5-turbo"
 chat_history = []
 
 #TODO: Greet your user and ask for their name to personalize the conversation
-def greet_user(user_name):
+def greet_user():
     user_name = input("Hello! Let's chat! You can type `exit` to exit out anytime. What's your name? ")
     chat_history.append({
         "role": "user",
