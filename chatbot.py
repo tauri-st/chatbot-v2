@@ -41,6 +41,8 @@ while True:
     
 	#TODO: make the API call
     response = get_api_chat_response_message(model, chat_history)
+
+    print("Chatbot: ", response)
 	#TODO: extract the message content and display it to the user
     #TODO: Use the assistant role to give the chatbot conversation context
 	    #add the message content to the chat history
