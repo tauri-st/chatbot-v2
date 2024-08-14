@@ -12,6 +12,8 @@ def get_api_chat_response_message(model, messages):
         messages = messages
     )
 
+    print(api_response)
+
     # extract the response text
     response_content = api_response.choices[0].message.content
 
