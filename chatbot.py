@@ -32,7 +32,7 @@ while True:
     if (user_input == ""):
         user_input = input("Hello! Let's chat! You can type `exit` to exit out anytime. What's your name? ")
         #the model doesn't always recognize the answer as a name
-        #hand it directly to the chatbot identified as the user's name
+        #hand it directly to the chatbot identified as the user's nameso
         user_name = f"User name is {user_input}"
         chat_history.append({
             "role": "user",
