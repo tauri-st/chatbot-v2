@@ -20,15 +20,15 @@ def get_api_chat_response_message(model, messages):
 
 model = "gpt-3.5-turbo"
 
-#TODO: create an array that will store the chat history
+#create an array that will store the chat history
 chat_history = []
 
 user_input = ""
 
-#TODO: Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
-#TODO: while the conversation is running:
+#Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
+#"while the conversation is running:"
 while True:
-    #TODO: Greet your user and ask for their name
+    #Greet your user and ask for their name
     if (user_input == ""):
         user_input = input("Hello! Let's chat! You can type `exit` to exit out anytime. What's your name? ")
         #the model doesn't always recognize the answer as a name
@@ -38,13 +38,13 @@ while True:
             "role": "user",
             "content": user_name
         })
-    #TODO: prompt the user for input
+    #prompt the user for input
     else:
         user_input = input("You: ")
-	#TODO: if the user types “exit”, stop the loop
+	#if the user types “exit”, stop the loop
     if user_input.lower() == "exit":
         break
-	#TODO: add the user’s input in the chat history
+	#add the user’s input in the chat history
     #*Format it like the messages dictionary for a chat completions 
     #*API call bc it's going to be sent as part of the call
     chat_history.append({
@@ -52,12 +52,12 @@ while True:
         "content": user_input
     })
     
-	#TODO: make the API call
+	#make the API call
     response = get_api_chat_response_message(model, chat_history)
 
-	#TODO: Display it to the user
+	#Display it to the user
     print("Chatbot: ", response)
-    #TODO: Use the assistant role to give the chatbot conversation context
+    #Use the assistant role to give the chatbot conversation context
 	    #add the message content to the chat history
     chat_history.append({
 	    "role": "assistant",
