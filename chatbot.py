@@ -48,7 +48,8 @@ while True:
 	#if the user types “exit”, stop the loop
     if user_input.lower() == "exit":
         break
-	#count the number of tokens in a prompt
+	
+    #count the number of tokens in a prompt
     #encode() takes the prompt as an arguement and returns a list of token integers
     #these integers are like unique IDs for tokens
     #user_input_encoded = encoding.encode(user_input)
@@ -58,6 +59,13 @@ while True:
     token_count = len(encoding.encode(user_input))
     print(token_count)
 
+    #make sure user's prompt does not exceed the maximum token limit for the model
+    token_input_limit = 12289
+
+    if (token_count > token_input_limit):
+        print("Your prompt is too long. Please try again.")
+        continue
+    
     #add the user’s input in the chat history
     #*Format it like the messages dictionary for a chat completions 
     #*API call bc it's going to be sent as part of the call
