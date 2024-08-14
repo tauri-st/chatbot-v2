@@ -13,8 +13,6 @@ def get_api_chat_response_message(model, messages):
         messages = messages
     )
 
-    print(api_response)
-
     # extract the response text
     response_content = api_response.choices[0].message.content
 
@@ -25,7 +23,6 @@ model = "gpt-3.5-turbo"
 
 #Tell tiktoken what model used in the script with a tiktoken built-in function
 encoding = tiktoken.encoding_for_model(model)
-print(encoding)
 
 #create an array that will store the chat history
 chat_history = []
@@ -51,7 +48,12 @@ while True:
 	#if the user types “exit”, stop the loop
     if user_input.lower() == "exit":
         break
-	#add the user’s input in the chat history
+	#count the number of tokens in a prompt
+    #encode() takes the prompt as an arguement and returns a list of token integers
+    #these integers are like unique IDs for tokens
+    user_input_encoded = encoding.encode(user_input)
+    print(user_input_encoded)
+    #add the user’s input in the chat history
     #*Format it like the messages dictionary for a chat completions 
     #*API call bc it's going to be sent as part of the call
     chat_history.append({
