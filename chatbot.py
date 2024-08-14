@@ -31,6 +31,15 @@ while True:
     #TODO: Greet your user and ask for their name
     if (user_input == ""):
         user_input = input("Hello! Let's chat! You can type `exit` to exit out anytime. What's your name? ")
+        user_name = f"User name is {user_input}"
+        messages = [
+            {"role": "user", "content": user_name}
+        ]
+        chat_history.append({
+            "role": "user",
+            "content": user_name
+        })
+        greeting = get_api_chat_response_message(model, messages)
     #TODO: prompt the user for input
     else:
         user_input = input("You: ")
