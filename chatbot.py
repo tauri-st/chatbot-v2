@@ -1,4 +1,5 @@
 from openai import OpenAI
+import tiktoken
 
 client = OpenAI()
 
@@ -21,6 +22,10 @@ def get_api_chat_response_message(model, messages):
     return response_content
 
 model = "gpt-3.5-turbo"
+
+#Tell tiktoken what model used in the script with a tiktoken built-in function
+encoding = tiktoken.encoding_for_model(model)
+print(encoding)
 
 #create an array that will store the chat history
 chat_history = []
