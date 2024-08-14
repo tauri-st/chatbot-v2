@@ -51,8 +51,13 @@ while True:
 	#count the number of tokens in a prompt
     #encode() takes the prompt as an arguement and returns a list of token integers
     #these integers are like unique IDs for tokens
-    user_input_encoded = encoding.encode(user_input)
-    print(user_input_encoded)
+    #user_input_encoded = encoding.encode(user_input)
+    #print(user_input_encoded)
+
+    #Add len() function to display total number of tokens instead:
+    token_count = len(encoding.encode(user_input))
+    print(token_count)
+
     #add the user’s input in the chat history
     #*Format it like the messages dictionary for a chat completions 
     #*API call bc it's going to be sent as part of the call
