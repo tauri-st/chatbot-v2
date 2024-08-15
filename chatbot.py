@@ -3,6 +3,9 @@ import tiktoken
 import logging
 import mylib
 
+#create a module level logger to do the logging
+logger = logging.getLogger(__name__)
+
 client = OpenAI()
 
 # accepts a preferred model and a list of messages
@@ -49,6 +52,10 @@ while True:
         user_input = input("You: ")
 	#if the user types “exit”, stop the loop
     if user_input.lower() == "exit":
+        #TODO: Write the log
+        #TODO: Include the date for reporting purposes
+        #TODO: Log total token usage
+        #TODO: Log output and input
         break
 	
     #count the number of tokens in a prompt
