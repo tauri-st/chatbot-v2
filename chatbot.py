@@ -1,5 +1,7 @@
 from openai import OpenAI
 import tiktoken
+import logging
+import mylib
 
 client = OpenAI()
 
@@ -65,7 +67,7 @@ while True:
     if (token_count > token_input_limit):
         print("Your prompt is too long. Please try again.")
         continue
-    
+
     #add the user’s input in the chat history
     #*Format it like the messages dictionary for a chat completions 
     #*API call bc it's going to be sent as part of the call
