@@ -34,6 +34,9 @@ chat_history = []
 
 user_input = ""
 
+#TODO: Append token usage in each while loop iteration
+usage = []
+
 #Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #"while the conversation is running:"
 while True:
