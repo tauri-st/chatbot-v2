@@ -4,7 +4,7 @@ import logging
 import mylib
 
 #create a module level logger to do the logging
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("chatbot_token_count")
 
 client = OpenAI()
 
@@ -44,7 +44,7 @@ usage = []
 
 #log function
 def main():
-    logging.basicConfig(filename='myapp.log', level=logging.INFO)
+    logging.basicConfig(filename='chatbot_token_count.log', level=logging.INFO)
     logger.info(f'Started')
     mylib.do_something()
     
@@ -70,7 +70,7 @@ while True:
         #TODO: Include the date for reporting purposes
         #TODO: Log total token usage
         #TODO: Log output and input
-        if __name__ == '__main__':
+        if "chatbot_token_count" == '__main__':
             main()
         break
 	
