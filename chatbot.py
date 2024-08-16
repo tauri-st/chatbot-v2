@@ -76,7 +76,6 @@ while True:
 
     #Add len() function to display total number of tokens instead:
     token_count = len(encoding.encode(user_input))
-    print(token_count)
 
     #make sure user's prompt does not exceed the maximum token limit for the model
     token_input_limit = 12289
