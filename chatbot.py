@@ -6,6 +6,9 @@ import mylib
 #create a module level logger to do the logging
 log = logging.getLogger("chatbot_token_count")
 
+#configure log file
+logging.basicConfig(filename='chatbot_token_count.log', level=logging.INFO)
+
 client = OpenAI()
 
 # accepts a preferred model and a list of messages
@@ -43,7 +46,6 @@ usage = []
 
 #log function
 def main():
-    logging.basicConfig(filename='chatbot_token_count.log', level=logging.INFO)
     log.info(f'Started')
     mylib.do_something()
     
