@@ -1,2 +1,4 @@
 INFO:__main__:Started
 INFO:mylib:Doing something
+INFO:__main__:Started
+INFO:mylib:Doing something

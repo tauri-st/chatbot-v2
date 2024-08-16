@@ -12,17 +12,22 @@ client = OpenAI()
 # makes chat completions API call
 # returns the response message content
 def get_api_chat_response_message(model, messages):
-    # make the API call
+    # the API call
     api_response = client.chat.completions.create(
         model = model,
         messages = messages
     )
 
-    # extract the response text
-    response_content = api_response.choices[0].message.content
+    return api_response
 
-    # return the response text
-    return response_content
+# extract the response text
+def get_response_messsage(api_response):
+    return api_response.choices[0].message.content
+
+# extract total number of tokens
+def get_response_total_tokes(api_response):
+    return api_response.usage.total_tokens
+
 
 model = "gpt-3.5-turbo"
 
@@ -76,15 +81,15 @@ while True:
     #print(user_input_encoded)
 
     #Add len() function to display total number of tokens instead:
-    token_count = len(encoding.encode(user_input))
-    print(token_count)
+    #token_count = len(encoding.encode(user_input))
+    #print(token_count)
 
     #make sure user's prompt does not exceed the maximum token limit for the model
     token_input_limit = 12289
 
-    if (token_count > token_input_limit):
-        print("Your prompt is too long. Please try again.")
-        continue
+    #if (token_count > token_input_limit):
+        #print("Your prompt is too long. Please try again.")
+        #continue
 
     #add the user’s input in the chat history
     #*Format it like the messages dictionary for a chat completions 
