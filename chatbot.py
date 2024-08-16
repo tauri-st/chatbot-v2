@@ -28,7 +28,7 @@ def get_response_message(response):
     return response.choices[0].message.content
 
 # extract total number of tokens
-def get_response_total_tokes(response):
+def get_response_total_tokens(response):
     return response.usage.total_tokens
 
 model = "gpt-3.5-turbo"
@@ -94,9 +94,12 @@ while True:
         "content": user_input
     })
     
-	#make the API call
+	#make the API call and get response
     response = get_api_chat_response_message(model, chat_history)
     response_message = get_response_message(response)
+
+    #get tokens
+    response_total_tokens = get_response_total_tokens(response)
 
 	#Display it to the user
     print("Chatbot: ", response)
