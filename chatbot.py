@@ -24,12 +24,12 @@ def get_api_chat_response_message(model, messages):
     return api_response
 
 # extract the response text
-def get_response_messsage(api_response):
-    return api_response.choices[0].message.content
+def get_response_message(response):
+    return response.choices[0].message.content
 
 # extract total number of tokens
-def get_response_total_tokes(api_response):
-    return api_response.usage.total_tokens
+def get_response_total_tokes(response):
+    return response.usage.total_tokens
 
 model = "gpt-3.5-turbo"
 
@@ -43,11 +43,6 @@ user_input = ""
 
 #TODO: Append token usage in each while loop iteration
 usage = []
-
-#log function
-def main():
-    log.info(f'Started')
-    mylib.do_something()
     
 #Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #"while the conversation is running:"
@@ -71,8 +66,7 @@ while True:
         #TODO: Include the date for reporting purposes
         #TODO: Log total token usage
         #TODO: Log output and input
-        if "chatbot_token_count" == '__main__':
-            main()
+        log.info(f'Started')
         break
 	
     #count the number of tokens in a prompt
@@ -102,6 +96,7 @@ while True:
     
 	#make the API call
     response = get_api_chat_response_message(model, chat_history)
+    response_message = get_response_message(response)
 
 	#Display it to the user
     print("Chatbot: ", response)
