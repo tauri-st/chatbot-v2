@@ -1,7 +1,6 @@
 from openai import OpenAI
 import tiktoken
 import logging
-import mylib
 
 #create a module level logger to do the logging
 log = logging.getLogger("chatbot_token_count")
