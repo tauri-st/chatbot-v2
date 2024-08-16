@@ -37,6 +37,12 @@ user_input = ""
 #TODO: Append token usage in each while loop iteration
 usage = []
 
+#log function
+def main():
+    logging.basicConfig(filename='myapp.log', level=logging.INFO)
+    logger.info(f'Started')
+    mylib.do_something()
+    
 #Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #"while the conversation is running:"
 while True:
@@ -59,6 +65,8 @@ while True:
         #TODO: Include the date for reporting purposes
         #TODO: Log total token usage
         #TODO: Log output and input
+        if __name__ == '__main__':
+            main()
         break
 	
     #count the number of tokens in a prompt
