@@ -101,11 +101,11 @@ while True:
     response_total_tokens = get_response_total_tokens(response)
 
 	#Display it to the user
-    print("Chatbot: ", response)
+    print("Chatbot: ", response_message)
     #Use the assistant role to give the chatbot conversation context
 	    #add the message content to the chat history
     chat_history.append({
 	    "role": "assistant",
-	    "content": response
+	    "content": response_message
     })
 	#*(now the loop starts over!)
