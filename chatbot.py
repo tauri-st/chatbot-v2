@@ -41,8 +41,7 @@ chat_history = []
 
 user_input = ""
 
-#TODO: Append token usage in each while loop iteration
-usage = []
+total_token_count = 0
     
 #Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
 #"while the conversation is running:"
@@ -100,6 +99,8 @@ while True:
 
     #get tokens
     response_total_tokens = get_response_total_tokens(response)
+    #TODO: Append token usage in each while loop iteration
+    total_token_count += response_total_tokens
 
 	#Display it to the user
     print("Chatbot: ", response_message)
