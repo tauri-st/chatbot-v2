@@ -1,6 +1,7 @@
 from openai import OpenAI
 import tiktoken
 import logging
+import datetime
 
 #create a module level logger to do the logging
 log = logging.getLogger("chatbot_token_count")
@@ -65,7 +66,7 @@ while True:
         #TODO: Include the date for reporting purposes
         #TODO: Log total token usage
         #TODO: Log output and input
-        log.info(f'Started')
+        log.info("\nDate: " + str(datetime.datetime.now()) + "\nTotal tokens: " + str(response_total_tokens) + "\n\n")
         break
 	
     #count the number of tokens in a prompt
