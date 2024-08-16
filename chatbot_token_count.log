@@ -1,0 +1,13 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:chatbot_token_count:
+Date: 2024-08-16 16:56:07.554916
+Total tokens: 187
+
+
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:chatbot_token_count:
+Date: 2024-08-16 16:56:26.027653
+Total tokens: 33
+
+
