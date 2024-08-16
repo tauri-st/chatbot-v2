@@ -4,7 +4,7 @@ import logging
 import mylib
 
 #create a module level logger to do the logging
-logger = logging.getLogger("chatbot_token_count")
+log = logging.getLogger("chatbot_token_count")
 
 client = OpenAI()
 
@@ -28,7 +28,6 @@ def get_response_messsage(api_response):
 def get_response_total_tokes(api_response):
     return api_response.usage.total_tokens
 
-
 model = "gpt-3.5-turbo"
 
 #Tell tiktoken what model used in the script with a tiktoken built-in function
@@ -45,7 +44,7 @@ usage = []
 #log function
 def main():
     logging.basicConfig(filename='chatbot_token_count.log', level=logging.INFO)
-    logger.info(f'Started')
+    log.info(f'Started')
     mylib.do_something()
     
 #Create a while loop to manage the conversation lifecycle (i.e. keep the conversation running until the user chooses to terminate it) 
