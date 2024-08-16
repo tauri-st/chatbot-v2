@@ -76,15 +76,15 @@ while True:
     #print(user_input_encoded)
 
     #Add len() function to display total number of tokens instead:
-    #token_count = len(encoding.encode(user_input))
-    #print(token_count)
+    token_count = len(encoding.encode(user_input))
+    print(token_count)
 
     #make sure user's prompt does not exceed the maximum token limit for the model
     token_input_limit = 12289
 
-    #if (token_count > token_input_limit):
-        #print("Your prompt is too long. Please try again.")
-        #continue
+    if (token_count > token_input_limit):
+        print("Your prompt is too long. Please try again.")
+        continue
 
     #add the user’s input in the chat history
     #*Format it like the messages dictionary for a chat completions 
