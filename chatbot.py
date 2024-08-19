@@ -63,7 +63,7 @@ while True:
         #Include the date for reporting purposes
         #Log total token usage
         #Log output and input
-        log.info("\nDate: " + str(datetime.datetime.now()) + "\nTotal tokens: " + str(response_total_tokens) + "\n\n")
+        log.info("\nDate: " + str(datetime.datetime.now()) + "\nResponse tokens: " + str(response_total_tokens) + "\nInput Token Usage: " + str(input_token_count) + "\nTotal Token Usage: " + str(response_total_tokens + input_token_count) + "\n\n")
         break
 	
     #count the number of tokens in a prompt
@@ -73,12 +73,12 @@ while True:
     #print(user_input_encoded)
 
     #Add len() function to display total number of tokens instead:
-    token_count = len(encoding.encode(user_input))
+    input_token_count = len(encoding.encode(user_input))
 
     #make sure user's prompt does not exceed the maximum token limit for the model
     token_input_limit = 12289
 
-    if (token_count > token_input_limit):
+    if (input_token_count > token_input_limit):
         print("Your prompt is too long. Please try again.")
         continue
 
