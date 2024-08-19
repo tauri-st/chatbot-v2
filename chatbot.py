@@ -3,9 +3,8 @@ import tiktoken
 import logging
 import datetime
 
-#create a module level logger to do the logging
+#Write the log by creating a module level logger to do the logging
 log = logging.getLogger("chatbot_token_count")
-
 #configure log file
 logging.basicConfig(filename='chatbot_token_count.log', level=logging.INFO)
 
@@ -61,10 +60,9 @@ while True:
         user_input = input("You: ")
 	#if the user types “exit”, stop the loop
     if user_input.lower() == "exit":
-        #TODO: Write the log
-        #TODO: Include the date for reporting purposes
-        #TODO: Log total token usage
-        #TODO: Log output and input
+        #Include the date for reporting purposes
+        #Log total token usage
+        #Log output and input
         log.info("\nDate: " + str(datetime.datetime.now()) + "\nTotal tokens: " + str(response_total_tokens) + "\n\n")
         break
 	
@@ -98,7 +96,7 @@ while True:
 
     #get tokens
     response_total_tokens = get_response_total_tokens(response)
-    #TODO: Append token usage in each while loop iteration
+    #Append token usage in each while loop iteration
     total_token_count += response_total_tokens
 
 	#Display it to the user
